@@ -1,0 +1,15 @@
+#toDoListFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e6e6e6;
+    color: #777;
+    font-weight: 300;
+    background-color: #fff;
+    padding: 10px 15px;
+}
+
+li {
+    display: list-item;
+}
