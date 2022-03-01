@@ -1,15 +1,17 @@
-#toDoListFooter {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #e6e6e6;
-    color: #777;
-    font-weight: 300;
-    background-color: #fff;
-    padding: 10px 15px;
+
+
+.row {
+    border-radius: 100px;
+    background: #46a3dd;
+    box-shadow:  -29px -29px 24px #204963,
+                 29px 29px 24px #6dfdff;
 }
 
-li {
-    display: list-item;
+#toDoList {
+
+
+    border-radius: 0px;
+    background: linear-gradient(315deg, #c9ec4b, #a9c73f);
+    box-shadow:  -5px -5px 8px #4b581c,
+                 5px 5px 8px #ffff70;
 }
