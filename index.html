@@ -9,36 +9,45 @@
     <link rel="icon" href="images/cover.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+   
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <h1 class="text-center">ToDo'S</h1>
+    <h1 class="text-center">To Do List 🗒️🖊️</h1>
     <p class="text-center">Date: <span id="date"></span></p>
+    
     <br>
     
+    
     <div class="container">
-        <div class="row overflow">
-            
-            <form id="addTask"></form>
-                <input id="newRequest" type="text" placeholder="Things needed to do">
-            
-                <button class="btn btn-warning">Add To Do</button>
-            </form>
+            <div class="row overflow">
+                <div class="col-12">
+                
+                            <form id="addTask">
+                                <input id="newRequest" type="text" placeholder="Things needed to do">
+                            
+                                <button  class="btn btn-warning"> ➕</button>
+                            </form>
         
         
-        
-            
-        
-        
-        </div>
-        <br>
-        <div id="toDoList">
-
-        </div>
+                                <br>
+                                
+                                <div id="toDoList">
+                                <ul class="taskIte"></ul>
+                                    
+                                </div>
+                </div>
+            </div>
     </div>
+    <br>
+    <br>
+    <hr>
+    <footer>
+        <span style="position: relative; left: 40%;"class="copyright text-muted small">Built by © <a href="https://confident-murdock-8e5bba.netlify.app/" target="_blank" rel="noopener noreferrer">Francis Artemio Landia</a>. 2022.</span>
+        </footer>
     <script src="index.js"></script>
 </body>
 
