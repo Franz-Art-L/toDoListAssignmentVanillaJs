@@ -29,24 +29,40 @@
                             <form id="addTask">
                                 <input id="newRequest" type="text" placeholder="Things needed to do">
                             
-                                <button  class="btn btn-warning"> ➕</button>
+                                <button  class="btn btn-warning" title="click to add new task"> ➕</button>
                             </form>
+
         
         
                                 <br>
                                 
                                 <div id="toDoList">
-                                <ul class="taskIte"></ul>
+                                <ul class="taskList"></ul>
                                     
-                                </div>
+                                
                 </div>
             </div>
+            <br>
+            
+            
     </div>
     <br>
-    <br>
+    <div class="todo-filter-wrapper d-flex p-3 justify-content-between">
+            
+                <div class="to-do-amount" title="remaining task not yet done"><span title="remaining task not yet done">2</span> tasks left</div>
+                <div class="to-do-filter d-flex my-0">
+                <button class="btn filter-button active" id="all" title="Click to show all tasks">All</button>
+                <button class="btn filter-button" id="active" title="Click to show all active tasks">Active</button>
+                <button class="btn filter-button" id="completed" title="Click to show all completed tasks">Completed</button></div>
+            
+        </div>
+    </div>
     <hr>
+
     <footer>
-        <span style="position: relative; left: 40%;"class="copyright text-muted small">Built by © <a href="https://confident-murdock-8e5bba.netlify.app/" target="_blank" rel="noopener noreferrer">Francis Artemio Landia</a>. 2022.</span>
+        <span style="position: relative; left: 40%;"class="text-center copyright text-muted small">Built by <a href="https://confident-murdock-8e5bba.netlify.app/" target="_blank" rel="noopener noreferrer">Francis Artemio Landia</a>. 2022.</span>
+        <br>
+        <span style="position: relative; left: 40%;"class="text-center copyright text-muted small">API powered by <a href="https://altcademy-to-do-list-api.herokuapp.com/" target="_blank" rel="noopener noreferrer">Altcademy To do list API</a>.</span>
         </footer>
     <script src="index.js"></script>
 </body>

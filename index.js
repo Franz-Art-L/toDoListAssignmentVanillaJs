@@ -3,6 +3,7 @@ var dt = new Date();
 
 document.getElementById("date").innerHTML = dt.toLocaleDateString();
 
+// the main program
 $(document).ready(() => {
 
     var getAndShowLatestTasks = () => {
@@ -14,9 +15,41 @@ $(document).ready(() => {
                 console.log(response);
                 // the response is already a parsed json data type. */
                 $('#toDoList').empty();
-                response.tasks.forEach(task => {
-                    $('#toDoList').append('<li class="li-text"><p id="listItem" class="col-xs-8">' + task.content + '<button id="taskButton" class="btn btn-danger d-inline float-right" data-id="' + task.id + '">REMOVE</button><input type="checkbox" class="mark-complete float-right" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '>' + "<br>");
+
+                var returnActiveTasks = response.tasks.filter(task => {
+                  if(!task.completed) {
+                    return task.id;
+                  }
                 });
+
+                var returnCompletedTasks = response.tasks.filter(task => {
+                  if(task.completed) {
+                    return task.id;
+                  }
+                });
+
+                var filter = $('.active').attr('id');
+
+                if(filter === 'all' || filter === '') {
+                  taskItems = response.tasks;
+                };
+
+                if(filter === 'active') {
+                  taskItems = returnActiveTasks;
+                };
+
+                if(filter == 'completed') {
+                  taskItems = returnCompletedTasks;
+                }
+
+                var sortedTaskItems = taskItems.sort(function(a, b) {
+                  return Date.parse(a.created_at) - Date.parse(b.created_at);
+                });
+
+                sortedTaskItems.forEach(task => {
+                    $('#toDoList').append('<li class="li-text"><p class="col-xs-12">' + task.content + '<button id="taskButton" title="click to remove task" class="btn btn-danger d-inline float-right delete" data-id="' + task.id + '">REMOVE</button><input type="checkbox" title="Check the box if task is done" class="mark-complete float-right" data-id="' + task.id + '"' + (task.completed ? 'checked' : '') + '>' + "<br>");
+                });
+                $('.to-do-amount span').text(returnActiveTasks.length);
             },
             error: function (request, textStatus, errorMessage) {
                 console.log(errorMessage);
@@ -106,6 +139,13 @@ $(document).ready(() => {
             taskActive($(this).data('id'));
          }
        });
+
+      //  filter the buttons on the bottom
+      $('.to-do-filter button').on('click', function() {
+        $(this).addClass('active');
+        $(this).siblings().removeClass('active');
+        getAndShowLatestTasks();
+      });
     
 
     getAndShowLatestTasks();
@@ -113,7 +153,9 @@ $(document).ready(() => {
 });
 
 // Some random colors
-const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+// I found this on codepen credit to the person who did this. :) 
+
+ const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
 
 const numBalls = 50;
 const balls = [];
@@ -122,8 +164,8 @@ for (let i = 0; i < numBalls; i++) {
   let ball = document.createElement("div");
   ball.classList.add("ball");
   ball.style.background = colors[Math.floor(Math.random() * colors.length)];
-  ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
-  ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
+  ball.style.left = `${Math.floor(Math.random() * 1)}vw`;
+  ball.style.top = `${Math.floor(Math.random() * 1)}vh`;
   ball.style.transform = `scale(${Math.random()})`;
   ball.style.width = `${Math.random()}em`;
   ball.style.height = ball.style.width;
@@ -133,7 +175,7 @@ for (let i = 0; i < numBalls; i++) {
 }
 
 // Keyframes
-balls.forEach((el, i, ra) => {
+ balls.forEach((el, i, ra) => {
   let to = {
     x: Math.random() * (i % 2 === 0 ? -11 : 11),
     y: Math.random() * 12
