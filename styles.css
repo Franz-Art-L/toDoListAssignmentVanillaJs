@@ -2,7 +2,7 @@ body {
     margin: 0;
     height: 100vh;
     width: 100vw;
-    overflow-x:  hidden;
+    overflow-x: hidden;
     justify-content: center;
 }
 
@@ -11,112 +11,65 @@ hr {
     background-color: white;
 }
 
- #addTask {
+#addTask {
     border-radius: 100px;
     background: #46a3dd;
-    box-shadow:  -29px -29px 24px #204963,
-                 29px 29px 24px #6dfdff;
-} 
-
- li {   
-    border-radius: 0px;
-background: #c2d9a0;
-box-shadow:  27px 27px 20px #505942,
-             -27px -27px 20px #fffffe;
-      
+    box-shadow: -29px -29px 24px #204963, 29px 29px 24px #6dfdff;
 }
 
-#toDoList {
-    height: 0px;
-    list-style: none;
+#taskLeft {
+    position: relative;
+    padding-top: 2px;
 }
 
+.to-do-amount {
+    position: relative;
+    top: 5px;
+}
 
-.li-text {
+#li-text {
     display: block;
-  
+    font-size: 18px;
     word-wrap: break-word;
 }
 
 #taskButton {
-    font-size: 12px;
-   
+    font-size: 17px;
+    position: relative;
+    left: 18px;
+    margin: 3px;
+    background-color: red;
+}
+
+#taskButton:hover {
+    color: white;
+    opacity: 3;
+    border-radius: 20px;
 }
 
 input[type=checkbox] {
     width: 21px;
-    height: 24px;
+    height: 39px;
     position: relative;
-    right: 17px;
+    right: 8px;
+}
+
+#toDoList {
+    border-radius: 0px;
+    background: #c2d9a0;
+    box-shadow: 27px 27px 20px #505942, -27px -27px 20px #fffffe;
 }
 
 .todo-filter-wrapper {
     color: white;
-   height: 60px;
-   
-    
-   border-radius: 55px;
-   background: #478fd1;
-   box-shadow:  20px 20px 21px #1c3954,
-                -20px -20px 21px #72e5ff;
+    height: 62px;
+    border-radius: 55px;
+    background: #478fd1;
+    box-shadow: 20px 20px 21px #1c3954, -20px -20px 21px #72e5ff;
 }
 
-#all, #active, #completed  {
-  color: white;
-} 
-
-/* Thanks to Chris Smith for this colorful background animation: */
- html {
-    height:100%;
-  }
-  
-  body {
-    margin:0;
-  }
-  
-  .bg {
-    animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
-  }
-  
-  .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:4s;
-  }
-  
-  .bg3 {
-    animation-duration:5s;
-  }
-  
-  .content {
-    background-color:rgba(255,255,255,.8);
-    border-radius:.25em;
-    box-shadow:0 0 .25em rgba(0,0,0,.25);
-    box-sizing:border-box;
-    left:50%;
-    padding:10vmin;
-    position:fixed;
-    text-align:center;
-    top:50%;
-    transform:translate(-50%, -50%);
-  }
-  
-  h1 {
-    font-family:monospace;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
-    }
-    100% {
-      transform:translateX(25%);
-    }
-  }
+#all,
+#active,
+#completed {
+    color: white;
+}
